@@ -1,0 +1,25 @@
+html {
+  background: rgb(255, 147, 51);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 147, 51, 1) 17%,
+    rgba(255, 255, 255, 1) 53%,
+    rgba(19, 136, 8, 1) 89%
+  );
+  background-repeat: no-repeat;
+  height: 100%;
+}
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+path {
+  fill: transparent;
+}
+
+text {
+  fill: #ff9800;
+}
