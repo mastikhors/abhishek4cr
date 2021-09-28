@@ -40,6 +40,14 @@ body {
   width: 25%;
   height: auto;
 }
+.chicks {
+  position: absolute;
+  top: 80%;
+  right: 15%;
+  transform: translate(+50%, -50%);
+  width: 25%;
+  height: auto;
+}
 
 path {
   fill: transparent;
@@ -62,4 +70,26 @@ canvas {
   left: 0;
   position: fixed;
   z-index: 9999;
+}
+@media only screen and (max-width: 1000px) {
+  .modi {
+    width: 50%;
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .slogan {
+    width: 80%;
+    position: relative;
+    top: 30%;
+  }
+  .bouquet,
+  .chicks {
+    position: relative;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+  }
 }
