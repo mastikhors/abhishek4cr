@@ -1,4 +1,11 @@
-html {
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+}
+.top {
+  position: relative;
   background: rgb(255, 147, 51);
   background: linear-gradient(
     135deg,
@@ -9,17 +16,50 @@ html {
   background-repeat: no-repeat;
   height: 100%;
 }
-img {
+.slogan {
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 30%;
+  height: auto;
 }
+.modi {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12%;
+  height: auto;
+}
+.bouquet {
+  position: absolute;
+  top: 80%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  height: auto;
+}
+
 path {
   fill: transparent;
 }
 
 text {
   fill: #ff9800;
+}
+
+.info {
+  position: relative;
+}
+h1 {
+  display: block;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 9999;
 }

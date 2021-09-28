@@ -9,10 +9,70 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <img src="./slogan.png" alt="" />
-    <script src="/confetti.min.js"></script>
+    <div class="top">
+      <img src="./slogan.png" alt="" class="slogan" />
+      <img src="./modi.jpg" class="modi" />
+      <img src="./bouquet.jpg" class="bouquet" />
+    </div>
+    <div class="info">
+      <h1>Abhishek 4 CR</h1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script>
-      confetti.start();
+      var myCanvas = document.createElement("canvas");
+      document.body.appendChild(myCanvas);
+
+      var colors = ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"];
+
+      var confetti = confetti.create(myCanvas, {
+        resize: true,
+        useWorker: true,
+      });
+      var duration = 15 * 1000;
+      var animationEnd = Date.now() + duration;
+      var skew = 1;
+
+      function randomInRange(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      (function frame() {
+        var timeLeft = animationEnd - Date.now();
+        var ticks = Math.max(200, 500 * (timeLeft / duration));
+        skew = Math.max(0.8, skew - 0.001);
+        var color = colors[Math.floor(Math.random() * colors.length)];
+        confetti({
+          particleCount: 1,
+          startVelocity: 0,
+          ticks: ticks,
+          origin: {
+            x: Math.random(),
+            y: Math.random() * skew - 0.2,
+          },
+          colors: [color],
+          shapes: ["sqaure"],
+          gravity: randomInRange(0.8, 1),
+          scalar: 1.2,
+          drift: randomInRange(-0.4, 0.4),
+        });
+        confetti({
+          particleCount: 1,
+          startVelocity: 0,
+          ticks: ticks,
+          origin: {
+            x: Math.random(),
+            y: Math.random() * skew - 0.2,
+          },
+          colors: [color],
+          shapes: ["sqaure"],
+          gravity: randomInRange(0.8, 1),
+          scalar: 1.2,
+          drift: randomInRange(-0.4, 0.4),
+        });
+        if (timeLeft > 0) {
+          requestAnimationFrame(frame);
+        }
+      })();
     </script>
   </body>
 </html>
